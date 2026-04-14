@@ -1,0 +1,113 @@
+<div class="container mt-4">
+   <div class="card shadow">
+      <div class="card-header bg-warning text-black">
+         <h4 class="mb-0">Update User</h4>
+      </div>
+
+      <div class="card-body">
+         <form #form="ngForm">
+            <div class="row g-3">
+
+               <div class="col-md-6">
+                  <label class="form-label">User ID</label>
+                  <input type="number" class="form-control" name="userId" placeholder="User ID"
+                     [(ngModel)]="user.userId" disabled>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">First Name</label>
+                  <input type="text" class="form-control" name="firstName" placeholder="First Name"
+                     [(ngModel)]="user.firstName" disabled>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" class="form-control" name="lastName" placeholder="Last Name"
+                     [(ngModel)]="user.lastName" [class.is-invalid]="errorMessages.lastName">
+
+                  <div *ngIf="errorMessages.lastName" class="text-danger">
+                     <small>{{errorMessages.lastName[0]}}</small>
+                  </div>   
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="text" class="form-control" name="email" placeholder="Email" [(ngModel)]="user.email"
+                     disabled>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Phone Number</label>
+                  <input type="text" class="form-control" name="phoneNumber" placeholder="Phone Number"
+                     [(ngModel)]="user.phoneNumber" [class.is-invalid]="errorMessages.phoneNumber">
+
+                  <div *ngIf="errorMessages.phoneNumber" class="text-danger">
+                     <small>{{errorMessages.phoneNumber[0]}}</small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Plan Type</label>
+                  <select class="form-control" name="planType" [(ngModel)]="user.planType"
+                     (change)="onPlanTypeChange()">
+                     <option value="" disabled hidden>Select Plan Type</option>
+                     <option *ngFor="let plan of planTypes" [value]="plan">
+                        {{plan}}
+                     </option>
+                  </select>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Price</label>
+                  <input type="number" class="form-control" name="price" placeholder="Plan Price" [ngModel]="user.price"
+                     readonly>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Plan ID</label>
+                  <input type="number" class="form-control" name="planId" placeholder="Plan ID"
+                     [(ngModel)]="user.planId" readonly>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Subscription Start Date</label>
+                  <input type="date" class="form-control" name="subscriptionStartDate" placeholder="Start Date"
+                     [(ngModel)]="user.subscriptionStartDate" readonly>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Subscription End Date</label>
+                  <input type="date" class="form-control" name="subscriptionEndDate" placeholder="Plan ID"
+                     [(ngModel)]="user.subscriptionEndDate" readonly>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Subscription Status</label>
+                  <select class="form-control" name="subscriptionStatus" [(ngModel)]="user.subscriptionStatus">
+                     <option value="" disabled hidden>Select Status</option>
+                     <option *ngFor="let s of statuses" [value]="s">
+                        {{s}}
+                     </option>
+                  </select>
+               </div>
+
+            </div>
+
+            <div class="button">
+
+               <button class="btn btn-warning" (click)="updateUser(form)">
+                  Update User
+               </button>
+
+               <button class="btn btn-outline-warning" (click)="clearForm(form)">
+                  Clear
+               </button>
+
+               <button class="btn btn-secondary" (click)="goBack()">
+                  Back
+               </button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

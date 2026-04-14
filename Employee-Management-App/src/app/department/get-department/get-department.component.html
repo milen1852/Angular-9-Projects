@@ -1,0 +1,23 @@
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>Department ID</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Created</th>
+      <th>Updated</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let d of departments">
+      <td>{{ d.deptId }}</td>
+      <td>{{ d.name }}</td>
+      <td>{{ d.location }}</td>
+      <td>{{ d.createdAt}}</td>
+      <td>{{ d.updatedAt }}</td>
+    </tr>
+  </tbody>
+</table>
+
+

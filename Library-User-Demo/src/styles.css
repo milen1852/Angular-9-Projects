@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+#borrowTable tbody tr.selected-row, #bookTable tbody tr.selected-row{
+    background-color: #57b5f8 !important;
+}
+
+#borrowTable tbody tr:hover, #bookTable tbody tr:hover {
+    background-color: #cfe6ff;
+    cursor: pointer;
+}

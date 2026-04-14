@@ -1,0 +1,36 @@
+<div class="container mt-5">
+        <h3 class="text-center mb-0">
+            DASHBOARD
+        </h3>
+
+    <div class="row g-6 mt-5">
+
+        <div class="col-md-6 col-lg-6">
+
+            <div class="card dashboard-card shadow-lg text-center p-4" [routerLink]="['/get-users']">
+                <div class="card-body">
+                    <h4 class="card-title">View Users</h4>
+                    <p class="card-text">Browse, Search & Filter Users</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6">
+
+            <div class="card dashboard-card shadow-lg text-center p-4" [routerLink]="['/add-user']">
+                <div class="card-body">
+                    <h4 class="card-title">Add User</h4>
+                    <p class="card-text">Add a new User</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="d-grid text-center mt-5">
+        <button type="button" class="btn btn-danger" (click)="logout()">
+            LOGOUT
+        </button>
+    </div>
+</div>
+

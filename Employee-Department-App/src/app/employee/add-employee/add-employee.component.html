@@ -1,0 +1,116 @@
+<div class="container mt-4">
+   <div class="card-shadow">
+      <div class="card-header bg-primary text-white">
+         <h4 class="mb-0">Add Employee</h4>
+      </div>
+      <div class="card-body">
+         <form #form="ngForm">
+            <div class="row g-3">
+
+               <div class="col-md-6">
+                  <label class="form-label required">Employee ID</label>
+                  <input type="number" name="empId" class="form-control" placeholder="Employee ID"
+                     [(ngModel)]="employee.empId">
+                  <div *ngIf="errorMessages.empId" class="text-danger">
+                     <small *ngFor="let err of errorMessages.empId">
+                        {{err}} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label required">First Name</label>
+                  <input type="text" name="firstName" class="form-control" placeholder="First Name"
+                     [(ngModel)]="employee.firstName">
+                  <div *ngIf="errorMessages.firstName" class="text-danger">
+                     <small *ngFor="let err of errorMessages.firstName">
+                        {{err}} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label required">Last Name</label>
+                  <input type="text" name="lastName" class="form-control" placeholder="Last Name"
+                     [(ngModel)]="employee.lastName">
+                  <div *ngIf="errorMessages.lastName" class="text-danger">
+                     <small *ngFor="let err of errorMessages.lastName">
+                        {{err}} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label required">Email</label>
+                  <input type="email" name="email" class="form-control" placeholder="Employee Email"
+                     [(ngModel)]="employee.email">
+                  <div *ngIf="errorMessages.email" class="text-danger">
+                     <small *ngFor="let err of errorMessages.email">
+                        {{err}} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Phone Number</label>
+                  <input type="text" name="phoneNumber" class="form-control" placeholder="Phone Number"
+                     [(ngModel)]="employee.phoneNumber">
+                  <div *ngIf="errorMessages.phoneNumber" class="text-danger">
+                     <small *ngFor="let err of errorMessages.phoneNumber">
+                        {{err}} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label required">Department ID</label>
+                  <input type="number" name="deptId" class="form-control" placeholder="Department ID"
+                     [(ngModel)]="employee.deptId">
+                  <div *ngIf="errorMessages.deptId" class="text-danger">
+                     <small *ngFor="let err of errorMessages.deptId">
+                        {{err}} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Salary</label>
+                  <input type="number" name="salary" class="form-control" placeholder="Salary"
+                     [(ngModel)]="employee.salary">
+                  <div *ngIf="errorMessages.salary" class="text-danger">
+                     <small *ngFor="let err of errorMessages.salary">
+                        {{err}} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Status</label>
+                  <input class="form-control" name="status" [(ngModel)]="employee.status" readonly>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Hire Date</label>
+                  <input type="date" name="hireDate" class="form-control" placeholder="Hire Date" [(ngModel)]="employee.hireDate">
+               </div>
+
+            </div>
+
+            <div>
+
+               <button type="button" class="btn btn-primary px-4" (click)="addEmployee(form)">
+                  Add Employee
+               </button>
+
+               <button type="button" class="btn btn-outline-danger px-4" (click)="clearForm(form)">
+                  Reset
+               </button>
+
+               <button type="button" class="btn btn-secondary" (click)="goBack()">
+                  <- Back
+               </button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

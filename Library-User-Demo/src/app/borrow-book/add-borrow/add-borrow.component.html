@@ -1,0 +1,99 @@
+<div class="container mt-4">
+   <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+         <h4 class="mb-0">Borrow Book</h4>
+      </div>
+
+      <div class="card-body">
+         <form #form="ngForm">
+
+            <div class="row g-3">
+
+               <div class="col-md-6">
+                  <label class="form-label">Book ID</label>
+                  <select class="form-control" name="bookId" [(ngModel)]="borrow.bookId"
+                     (change)="onBookChange(borrow.bookId)" [class.is-invalid]="errorMessages.bookId">
+                     <option [ngValue]="null" disabled hidden>Select Book ID</option>
+                     <option *ngFor="let b of books" [ngValue]="b.bookId">
+                        {{ b.bookId }}
+                     </option>
+                  </select>
+                  <div *ngIf="errorMessages.bookId" class="text-danger">
+                     <small>{{errorMessages.bookId[0]}}</small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Title</label>
+                  <input type="text" class="form-control" name="title" placeholder="Title"
+                     [ngModel]="selectedBook.title" disabled>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Author</label>
+                  <input type="text" class="form-control" name="author" placeholder="Author"
+                     [ngModel]="selectedBook.author" disabled>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Publisher</label>
+                  <input type="text" class="form-control" name="publisher" placeholder="Publisher"
+                     [ngModel]="selectedBook.publisher" disabled>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Borrowed By</label>
+                  <input type="text" class="form-control" name="borrowedBy" placeholder="Borrowed By"
+                     [(ngModel)]="borrow.borrowedBy" [class.is-invalid]="errorMessages.borrowedBy">
+
+                  <div *ngIf="errorMessages.borrowedBy" class="text-danger">
+                     <small>{{errorMessages.borrowedBy[0]}}</small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Borrow Date</label>
+                  <input type="date" class="form-control" name="borrowDate" placeholder="Borrowed Date"
+                     [(ngModel)]="borrow.borrowDate" (change)="onBorrowDateChange()"
+                     [class.is-invalid]="errorMessages.borrowDate">
+                  
+                  <div *ngIf="errorMessages.borrowDate" class="text-danger">
+                     <small>{{errorMessages.borrowDate[0]}}</small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Due Date</label>
+                  <input type="date" class="form-control" name="dueDate" placeholder="Due Date"
+                     [(ngModel)]="borrow.dueDate" disabled [class.is-invalid]="errorMessages.dueDate">
+                  <div *ngIf="errorMessages.dueDate" class="text-danger">
+                     <small>{{errorMessages.dueDate[0]}}</small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Status</label>
+                  <input type="text" class="form-control" name="status" placeholder="Status" [(ngModel)]="borrow.status"
+                     disabled>
+               </div>
+
+            </div>
+
+            <div>
+
+               <button type="button" class="btn btn-primary" (click)="addBorrow(form)">
+                  Borrow Book
+               </button>
+
+               <button type="button" class="btn btn-outline-primary" (click)="clearForm(form)">
+                  Clear Form
+               </button>
+
+               <button type="button" class="btn btn-secondary" (click)="goBack()">
+                  Back
+               </button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="container mt-5">
+
+  <h2 class="text-center mb-5">Dashboard</h2>
+
+  <div class="row g-4">
+
+    <!-- VIEW EMPLOYEES CARD -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="card dashboard-card shadow-lg text-center p-4"
+        routerLink="/get-employees">
+
+        <div class="card-body">
+          <div class="icon mb-3">👥</div>
+          <h4 class="card-title">View Employees</h4>
+          <p class="card-text">
+            Browse, search and filter all employees
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ADD EMPLOYEE CARD -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="card dashboard-card shadow-lg text-center p-4"
+        routerLink="/add-employee">
+
+        <div class="card-body">
+          <div class="icon mb-3">➕</div>
+          <h4 class="card-title">Add Employee</h4>
+          <p class="card-text">
+            Create a new employee record
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VIEW DEPARTMENTS CARD -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="card dashboard-card shadow-lg text-center p-4"
+        routerLink="/get-departments">
+
+        <div class="card-body">
+          <div class="icon mb-3">🏢</div>
+          <h4 class="card-title">View Departments</h4>
+          <p class="card-text">
+            View and manage all departments
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ADD DEPARTMENT CARD -->
+    <div class="col-md-6 col-lg-3">
+      <div
+        class="card dashboard-card shadow-lg text-center p-4"
+        routerLink="/add-department">
+
+        <div class="card-body">
+          <div class="icon mb-3">➕</div>
+          <h4 class="card-title">Add Department</h4>
+          <p class="card-text">
+            Create a new department
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LOGOUT BUTTON -->
+  <div class="text-center mt-5">
+    <button class="btn btn-danger px-4" (click)="logout()">
+      Logout
+    </button>
+  </div>
+
+</div>

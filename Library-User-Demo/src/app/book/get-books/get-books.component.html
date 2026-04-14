@@ -1,0 +1,91 @@
+<div class="container mt-4">
+
+   <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4 class="mb-0">BOOKS</h4>
+
+      <div class="button1">
+         <button class="btn btn-primary me-2" [disabled]="!selectedBook" (click)="onUpdateCopies()">
+            Update Copies
+         </button>
+      </div>
+   </div>
+
+   <div class="card shadow-sm">
+      <div class="card-header bg-light fw-semibold">
+         Search & Filters
+      </div>
+
+      <div class="card-body">
+         <div class="row g-3">
+
+            <div class="col-md-4">
+               <input type="text" class="form-control" placeholder="Search Title" [(ngModel)]="title">
+            </div>
+
+            <div class="col-md-4">
+               <input type="text" class="form-control" placeholder="Search Author" [(ngModel)]="author">
+            </div>
+
+            <div class="col-md-4">
+               <input type="text" class="form-control" placeholder="Search Publisher" [(ngModel)]="publisher">
+            </div>
+         </div>
+
+         <div class="button2">
+            <button class="btn btn-success" (click)="searchBooks()">
+               Search
+            </button>
+
+            <button class="btn btn-outline-secondary" (click)="resetFilters()">
+               Reset
+            </button>
+         </div>
+      </div>
+   </div>
+
+   <div class="card shadow-sm">
+      <div class="card-body p-0">
+
+         <div class="table-responsive">
+            <table id="bookTable" class="table table-hover table-bordered table-striped mb-0">
+               <thead class="table-dark">
+                  <tr>
+                     <th>Book ID</th>
+                     <th>Title</th>
+                     <th>Author</th>
+                     <th>Publisher</th>
+                     <th>Total Copies</th>
+                     <th>Available Copies</th>
+                  </tr>
+               </thead>
+            </table>
+         </div>
+
+         <div class="d-flex justify-content-between align-items-center p-3">
+            <div>
+
+            </div>
+
+            <div class="button3">
+               <button class="btn btn-outline-primary" [disabled]="page === 0" (click)="prevPage()">
+                  <- Prev </button>
+
+                     <span class="fw-semibold">
+                        Page {{page + 1}}
+                     </span>
+
+                     <button class="btn btn-outline-primary" [disabled]="(page + 1) * size >= totalElements"
+                        (click)="nextPage()">
+                        Next ->
+                     </button>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="d-grid mt-4">
+      <button type="button" class="btn btn-secondary" (click)="goBack()">
+         <- Go to Dashboard
+      </button>
+   </div>
+</div>

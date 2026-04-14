@@ -1,0 +1,23 @@
+.button1 button{
+    width: 150px;
+    margin-left: 18px;
+    padding: auto;
+    height: 45px;
+}
+
+.button2 button{
+    margin-top: 18px;
+    margin-right: 18px;
+    width: 100px;
+    height: 40px;
+    padding: auto;
+}
+
+.form-control {
+    margin-top: 15px;
+}
+
+.button3 button{
+    margin-left: 10px;
+    margin-right: 10px;
+}

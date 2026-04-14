@@ -1,0 +1,43 @@
+<div class="container mt-4">
+  <div class="card shadow-lg">
+    <div class="card-header bg-dark text-white">
+      <h5 class="mb-0">Department Details</h5>
+    </div>
+
+    <div class="card-body" *ngIf="department">
+      <table class="table table-bordered table-striped">
+        <tbody>
+
+          <tr>
+            <th>Department ID</th>
+            <td>{{ department?.deptId}}</td>
+          </tr>
+
+          <tr>
+            <th>Department Name</th>
+            <td>{{ department.name }}</td>
+          </tr>
+
+          <tr>
+            <th>Location</th>
+            <td>{{ department.location }}</td>
+          </tr>
+
+          <tr>
+            <th>Created At</th>
+            <td>{{ department.createdAt }}</td>
+          </tr>
+
+          <tr>
+            <th>Updated At</th>
+            <td>{{ department.updatedAt }}</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <button class="btn btn-secondary" (click)="goBack()">
+        Back
+      </button>
+    </div>
+  </div>
+</div>

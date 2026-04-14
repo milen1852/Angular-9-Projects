@@ -1,0 +1,60 @@
+<div class="container mt-5">
+
+  <h3 class="text-center mb-5">Library Dashboard</h3>
+
+  <div class="row g-4">
+
+    <div class="col-md-6 col-lg-4">
+      <div
+        class="card dashboard-card shadow-lg text-center p-4"
+        routerLink="/get-borrow">
+
+        <div class="card-body">
+          <h5 class="card-title">View Borrowed Books</h5>
+          <p class="card-text">
+            Browse, search and filter all Borrowed Books
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div
+        class="card dashboard-card shadow-lg text-center p-4"
+        routerLink="/add-borrow">
+
+        <div class="card-body">
+          <h4 class="card-title">Add Borrowed Books</h4>
+          <p class="card-text">
+            Borrow Book
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div
+        class="card dashboard-card shadow-lg text-center p-4"
+        routerLink="/get-book">
+
+        <div class="card-body">
+          <h4 class="card-title">View Books</h4>
+          <p class="card-text">
+            View and manage all books
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-5">
+    <button class="btn btn-danger px-4" (click)="logout()">
+      Logout
+    </button>
+  </div>
+
+</div>
+

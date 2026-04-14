@@ -1,0 +1,55 @@
+.button1 button{
+    width: 150px;
+    margin-left: 18px;
+    padding: auto;
+    height: 45px;
+}
+
+.button2 button{
+    margin-top: 18px;
+    margin-right: 18px;
+    width: 100px;
+    height: 40px;
+    padding: auto;
+}
+
+.form-control {
+    margin-top: 15px;
+}
+
+.button3 button{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+.tooltip-wrap {
+  position: relative;
+  display: inline-block;
+  pointer-events: auto;
+}
+
+.tooltip-wrap .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  padding: 4px 8px;
+  position: absolute;
+  z-index: 1000;
+  top: 110%;
+  left: 56%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.tooltip-wrap:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+

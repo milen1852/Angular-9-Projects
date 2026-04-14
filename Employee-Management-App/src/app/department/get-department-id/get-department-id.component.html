@@ -1,0 +1,70 @@
+<div class="container mt-4">
+  <div class="card shadow-lg">
+    <div class="card-header bg-dark text-white">
+      <h5 class="mb-0">Employee & Department Details</h5>
+    </div>
+
+    <div class="card-body" *ngIf="employee">
+      <table class="table table-bordered table-striped">
+        <tbody>
+
+          <tr>
+            <th>Employee ID</th>
+            <td>{{ employee?.empId }}</td>
+          </tr>
+
+          <tr>
+            <th>Name</th>
+            <td>{{ employee.firstName }} {{ employee.lastName }}</td>
+          </tr>
+
+          <tr>
+            <th>Email</th>
+            <td>{{ employee?.email }}</td>
+          </tr>
+
+          <tr>
+            <th>Department ID</th>
+            <td>{{ employee.deptId }}</td>
+          </tr>
+
+          <tr>
+            <th>Department Name</th>
+            <td>{{ employee?.departmentResponseDTO?.name }}</td>
+          </tr>
+
+          <tr>
+            <th>Department Location</th>
+            <td>{{ employee?.departmentResponseDTO?.location }}</td>
+          </tr>
+
+          <tr>
+            <th>Phone Number</th>
+            <td>{{ employee.phoneNumber }}</td>
+          </tr>
+
+          <tr>
+            <th>Status</th>
+            <td>
+              <span class="badge bg-success" *ngIf="employee.status === 'ACTIVE'">
+                ACTIVE
+              </span>
+              <span class="badge bg-warning" *ngIf="employee.status === 'INACTIVE'">
+                INACTIVE
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <th>Hire Date</th>
+            <td>{{ employee.hireDate }}</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <button class="btn btn-secondary" (click)="goBack()">
+        Back
+      </button>
+    </div>
+  </div>
+</div>

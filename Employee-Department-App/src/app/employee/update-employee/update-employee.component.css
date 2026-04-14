@@ -1,0 +1,14 @@
+input.placeholder {
+    font-weight: 100;
+}
+
+label {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+button {
+    margin-top: 10px;
+    margin-right: 15px;
+    padding: 10px;
+}
