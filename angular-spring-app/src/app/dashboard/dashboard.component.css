@@ -1,0 +1,16 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: linear-gradient(90deg, #1e5a74, #307e98, #2c5364);
+  color: #23393b;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+}
+
+.title {
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}

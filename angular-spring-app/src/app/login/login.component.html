@@ -1,0 +1,39 @@
+<div class="full-height-center">
+  <div class="login-wrapper">
+
+    <div class="card-custom login-card">
+      <h3 class="text-center mb-4">Product Management Login</h3>
+
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="username"
+          placeholder="Username"
+          required>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          [(ngModel)]="password"
+          placeholder="Password"
+          required>
+      </div>
+
+      <button
+        class="btn btn-primary btn-custom w-100"
+        (click)="login()">
+        Login
+      </button>
+
+      <div *ngIf="error" class="text-danger text-center mt-3">
+        {{ error }}
+      </div>
+    </div>
+
+  </div>
+</div>

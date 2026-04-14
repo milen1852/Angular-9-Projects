@@ -1,0 +1,24 @@
+<p>login-task PAGE !</p>
+
+<H3>PIPES</H3>
+<div>
+    {{user.id}} {{user.firstName | uppercase}} {{user.lastName | lowercase}} 
+    {{user.dob | date: 'longDate'| uppercase}}  {{user.salary | currency}}
+
+    <!--longDate - Parameterized Pipes , uppercase - Built in Pipes-->
+</div>
+<code>
+    {{user | json}}
+</code>
+
+<br><br>
+
+<h3>CUSTOM PIPES</h3>
+<!-- <div>
+    {{user.city | hoverEffect: user.city : user.citycode}}
+</div> -->
+
+<div [innerHTML]="user.city | hoverEffect: user.city"></div>
+
+<p [ngStyle]="style">PAGE ENDS</p>
+<hr>

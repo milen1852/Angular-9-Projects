@@ -1,0 +1,34 @@
+<h1 class="bg-success">Welcom Milen! {{title}}</h1>          <!--title - Simple Interpolation-->
+
+<button class="btn btn-warning">BootStrap Button</button>
+
+<hr>
+
+<app-login-task></app-login-task>               <!--Sub Component-->
+
+<h3>NgIf Example</h3>
+
+<div *ngIf="showMsg; then thenMessage; else errorMessage"></div>
+<ng-template #thenMessage>
+    <div [ngStyle] = "styleObj">Showing "Then Message" Since Statement is Then</div>
+</ng-template>
+<ng-template #errorMessage>Showing "Error message" Since Statement is False</ng-template>
+<hr>
+
+<h3>NgSwitch Example</h3>
+
+<div [ngSwitch]= "switchValue">
+    <div *ngSwitchCase="'one'">Value Passed : 1</div>
+    <div *ngSwitchCase="'two'">Value Passed : 2</div>
+    <div *ngSwitchCase="'three'">Value Passed : 3</div>
+    <div *ngSwitchDefault>Value is Default</div>
+</div>
+
+<hr>
+
+<button class="btn btn-danger" (click) = "readMe(intVal)" (focus)="showMe()">Click Me</button>
+<hr>    
+
+<app-tasks></app-tasks>            <!--Component Inside a Module--> 
+
+<router-outlet></router-outlet>

@@ -1,0 +1,59 @@
+<h4>List of Tasks</h4>
+
+<p>tasks works!</p>
+
+<div [ngSwitch] = "value" [ngStyle] = "style">
+    <div *ngSwitchCase="1">Value is : 1</div>
+    <div *ngSwitchCase="2">Value is : 2</div>
+    <div *ngSwitchCase="3">Value is : 3</div>
+    <div *ngSwitchDefault>Value is Default</div>
+</div>
+
+<hr>
+<a [href]="hrefVal" target="_blank">Google Me</a>
+<input type="password" name="" id="" [placeholder]="placeHolderVal">
+
+<h3>NgFor Example</h3>
+
+<table class="table table-success">
+    <thead>
+        <th>User Id</th>
+        <th>Name</th>
+        <th>Index</th>
+        <th>First</th>
+        <th>Last</th>
+        <th>Even</th>
+        <th>Odd</th>
+    </thead>
+    <tr *ngFor= "let user of users; index as i; first as f; last as l; even as e; odd as o">
+        <td [attr.colspan]="columnCount">{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{i}}</td>
+        <td>{{f}}</td>
+        <td>{{l}}</td>
+        <td>{{e}}</td>             <!--Checks index - odd or even -->
+        <td>{{o}}</td>
+    </tr>
+</table>
+
+<h4>NgClass Demo</h4>
+
+<div [ngClass] = "[className1, className2]">
+    Learning ngClass
+</div>
+
+<div [ngClass] = "{'one': true}">
+    Learning ngClass with expressions
+</div>
+
+<div [ngClass] = "{'one': false, 'two': true}">
+    Learning ngClass with expressions
+</div>
+<hr>
+
+<input [(ngModel)]='firstname'/>
+
+<button (click)="readFirstName()">Read Name</button>
+
+<div>{{firstname}}</div>
+<hr>

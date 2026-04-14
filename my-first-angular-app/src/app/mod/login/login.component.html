@@ -1,0 +1,38 @@
+<div class="login-bg">
+  <div class="login-card">
+
+    <h3 class="text-center">Welcome Back</h3>
+    <p class="text-center text-muted">Please login to your account</p>
+
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Username"
+      [(ngModel)]="username"
+    />
+
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Password"
+      [(ngModel)]="password"
+    />
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <input type="checkbox" [(ngModel)]="rememberMe"> Remember me
+      </div>
+      <a href="#" class="link">Forgot password?</a>
+    </div>
+
+    <button class="btn btn-primary btn-block" (click)="login()">Login</button>
+
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <p class="text-center mt-3">
+      Don't have an account?
+      <a href="#" class="link">Register</a>
+    </p>
+
+  </div>
+</div>

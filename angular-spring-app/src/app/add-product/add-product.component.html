@@ -1,0 +1,35 @@
+<div class="app-header">Add Product</div>
+
+<div class="container page-container col-md-6">
+  <div class="card-custom">
+
+    <h4 class="mb-4">Add Product</h4>
+
+    <input class="form-control mb-3"
+           placeholder="Product ID"
+           [(ngModel)]="product.prodId">
+
+    <input class="form-control mb-3"
+           placeholder="Product Name"
+           [(ngModel)]="product.prodName">
+
+    <input class="form-control mb-3"
+           placeholder="Category"
+           [(ngModel)]="product.prodCategory">
+
+    <input class="form-control mb-3"
+           placeholder="Price"
+           [(ngModel)]="product.prodPrice">
+
+    <input class="form-control mb-4"
+           placeholder="Quantity"
+           [(ngModel)]="product.prodQuantity">
+
+    <button class="btn btn-success btn-custom w-100"
+            (click)="add()">
+      Add Product
+    </button>
+
+  </div>
+</div>
+

@@ -1,0 +1,24 @@
+<div class="card">
+  <h2>Delete Product</h2>
+
+  <form [formGroup]="deleteForm" (ngSubmit)="deleteProduct()">
+
+    <label>Product ID</label>
+    <input type="number" formControlName="prodId">
+    <small *ngIf="submitted && f.prodId.errors?.required">
+      Product ID is required
+    </small>
+
+    <label>Product Name</label>
+    <input type="text" formControlName="prodName">
+    <small *ngIf="submitted && f.prodName.errors?.required">
+      Product name is required
+    </small>
+
+    <button type="submit" [disabled]="deleteForm.invalid" class="danger">
+      Delete Product
+    </button>
+
+  </form>
+</div>
+

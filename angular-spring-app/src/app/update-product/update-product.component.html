@@ -1,0 +1,39 @@
+<div class="app-header">Update Product</div>
+
+<div class="container page-container col-md-6">
+  <div class="card-custom">
+
+    <h4 class="mb-4">Update Product</h4>
+
+    <input
+      class="form-control mb-3"
+      placeholder="Product ID"
+      [(ngModel)]="prodId">
+
+    <input
+    readonly
+      class="form-control mb-3"
+      placeholder="Name"
+      [(ngModel)]="product.prodName">
+
+    <input
+      class="form-control mb-3"
+      placeholder="Category"
+      [(ngModel)]="product.prodCategory">
+
+    <input
+      class="form-control mb-3"
+      placeholder="Price"
+      [(ngModel)]="product.prodPrice">
+
+    <input
+      class="form-control mb-3"
+      placeholder="Quantity"
+      [(ngModel)]="product.prodQuantity">
+
+    <button class="btn btn-warning btn-custom w-100" (click)="update()">
+      Update Product
+    </button>
+
+  </div>
+</div>

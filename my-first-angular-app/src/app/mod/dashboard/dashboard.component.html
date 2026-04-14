@@ -1,0 +1,19 @@
+<div class="dashboard-container">
+  <div class="card profile-card">
+
+    <div class="card-header d-flex justify-content-between">
+      <h4>User Dashboard</h4>
+      <button class="btn btn-danger btn-sm" (click)="logout()">Logout</button>
+    </div>
+
+    <div class="card-body">
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Address:</strong> {{ user.address }}</p>
+      <p><strong>City:</strong> {{ user.city }}</p>
+      <p><strong>Phone:</strong> {{ user.phone }}</p>
+    </div>
+
+  </div>
+</div>
+
+
