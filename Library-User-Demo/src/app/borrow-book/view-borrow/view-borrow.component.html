@@ -1,0 +1,73 @@
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">Borrowed Book Details</h4>
+        </div>
+
+        <div class="card-body" *ngIf="borrowBook">
+            <table class="table table-bordered table-striped">
+                <tbody>
+
+                    <tr>
+                        <th>Book ID</th>
+                        <td> {{borrowBook.bookId}} </td>
+                    </tr>
+
+                    <tr>
+                        <th>Title</th>
+                        <td> {{bookDetails?.title}} </td>
+                    </tr>
+
+                    <tr>
+                        <th>Author</th>
+                        <td> {{bookDetails?.author}} </td>
+                    </tr>
+
+                    <tr>
+                        <th>Publisher</th>
+                        <td> {{bookDetails?.publisher}} </td>
+                    </tr>
+
+
+                    <tr>
+                        <th>Borrowed By</th>
+                        <td> {{borrowBook.borrowedBy}} </td>
+                    </tr>
+
+                    <tr>
+                        <th>Borrow Date</th>
+                        <td> {{borrowBook.borrowDate}} </td>
+                    </tr>
+
+                    <tr>
+                        <th>Due Date</th>
+                        <td> {{borrowBook.dueDate}} </td>
+                    </tr>
+
+                    <tr>
+                        <th>Return Date</th>
+                        <td> {{borrowBook.returnDate}} </td>
+                    </tr>
+
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            <span class="badge bg-success" *ngIf="borrowBook.status === 'BORROWED'">
+                                BORROWED
+                            </span>
+                            <span class="badge bg-warning" *ngIf="borrowBook.status === 'RETURNED'">
+                                RETURNED
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-grid mt-4">
+                <button class="btn btn-outline-success" (click)="goBack()">
+                    <- Back </button>
+            </div>
+
+        </div>
+    </div>
+</div>

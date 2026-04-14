@@ -1,0 +1,126 @@
+<div class="container mt-4">
+   <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+         <h4 class="mb-0">Add Employee</h4>
+      </div>
+
+      <div class="card-body">
+         <form #empForm="ngForm" novalidate>
+
+            <div class="row g-3">
+
+               <div class="col-md-6">
+                  <label class="form-label required">Employee Id</label>
+                  <input class="form-control" name="empId" placeholder="Employee Id" type="number"
+                     [(ngModel)]="employee.empId" required
+                     [class.is-invalid]="errorMessages.empId">
+                  <div *ngIf="errorMessages.empId" class="text-danger">
+                     <small>
+                        {{errorMessages.empId}}
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label required">First Name</label>
+                  <input class="form-control" name="firstName" placeholder="First Name" [(ngModel)]="employee.firstName"
+                     #firstName="ngModel" [class.is-invalid]="errorMessages.firstName">
+                  <div *ngIf="errorMessages.firstName" class="text-danger">
+                     <small>
+                        {{errorMessages.firstName}} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label required">Last Name</label>
+                  <input class="form-control" name="lastName" placeholder="Last Name" [(ngModel)]="employee.lastName"
+                     [class.is-invalid]="errorMessages.lastName" required>
+                  <div *ngIf="errorMessages.lastName" class="text-danger">
+                     <small>
+                        {{errorMessages.lastName}} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label required">Email</label>
+                  <input class="form-control" name="email" placeholder="Email" [(ngModel)]="employee.email" required
+                     [class.is-invalid]="errorMessages.email">
+                  <div *ngIf="errorMessages.email" class="text-danger">
+                     <small *ngFor="let error of errorMessages.email">
+                        {{ error }} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Phone Number</label>
+                  <input class="form-control" name="phoneNumber" placeholder="Phone Number"
+                     [(ngModel)]="employee.phoneNumber" [class.is-invalid]="errorMessages.phoneNumber">
+                  <div *ngIf="errorMessages.phoneNumber" class="text-danger">
+                     <small *ngFor="let err of errorMessages.phoneNumber">
+                        {{ err }} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label required">Department Id</label>
+                  <input class="form-control" name="deptId" placeholder="Department ID" type="number"
+                     [(ngModel)]="employee.deptId" [class.is-invalid]="errorMessages.deptId" required>
+                  <div *ngIf="errorMessages.deptId" class="text-danger">
+                     <small *ngFor="let err of errorMessages.deptId">
+                        {{ err }} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Salary</label>
+                  <input class="form-control" name="salary" placeholder="Salary" type="number"
+                     [(ngModel)]="employee.salary" [class.is-invalid]="errorMessages.salary">
+                  <div *ngIf="errorMessages.salary" class="text-danger">
+                     <small *ngFor="let error of errorMessages.salary">
+                        {{error}} <br>
+                     </small>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Status</label>
+                  <input class="form-control" name="status" [(ngModel)]="employee.status" readonly>
+                  <!-- <select class="form-select" name="status" [(ngModel)]="employee.status">
+              <option *ngFor="let s of statuses" [value]="s">
+                {{ s }}
+              </option>
+            </select> -->
+               </div>
+
+               <div class="col-md-6">
+                  <label class="form-label">Hire Date</label>
+                  <input type="date" class="form-control" name="hireDate" [(ngModel)]="employee.hireDate"
+                     placeholder="Select Hire Date">
+               </div>
+
+
+            </div>
+
+            <div class="mt-4 d-flex gap-3">
+               <button type="button" class="btn btn-success px-4" (click)="saveEmployee(empForm)">
+                  Add Employee
+               </button>
+
+               <button type="button" class="btn btn-outline-secondary px-4" (click)="clearForm(empForm)">
+                  Clear
+               </button>
+
+               <button class="btn btn-secondary px-4" (click)="goBack()">
+                  Back
+               </button>
+            </div>
+
+         </form>
+      </div>
+   </div>
+</div>

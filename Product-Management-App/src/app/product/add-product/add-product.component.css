@@ -1,0 +1,9 @@
+.mt-4 {
+    display: flex;
+    gap: 12px;
+};
+
+input {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}

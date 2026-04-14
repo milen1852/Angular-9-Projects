@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <div class="card-shadow">
+        <div class="card-header bg-warning text-black">
+            <h4 class="mb-0">Update Department</h4>
+        </div>
+
+        <div class="card-body">
+            <form #updateForm = "ngForm">
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label for="form-label">Department ID</label>
+                        <input type="number" name="deptId" class="form-control" [value]="departments.deptId" disabled>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Department Name</label>
+                        <input type="text" name="name" class="form-control" [(ngModel)]="departments.name">
+                        <div *ngIf="errorMessages.name" class="text-danger">
+                            <small *ngFor="let err of errorMessages.name">
+                                {{err}} <br>
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Department Location</label>
+                        <input type="text" name="location" class="form-control" [(ngModel)]="departments.location">
+                        <div *ngIf="errorMessages.location" class="text-danger">
+                            <small *ngFor="let err of errorMessages.location">
+                                {{err}} <br>
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="form-label">Created Time</label>
+                        <input type="date" name="createdAt" class="form-control" [(ngModel)]="departments.createdAt" disabled>
+                    </div>
+
+                </div>
+
+                <div class="row g-3">
+
+                    <button type="button" class="btn btn-warning" (click)="updateDepartment(updateForm)">
+                        Update Department
+                    </button>
+
+                    <button type="button" class="btn btn-outline-danger" (click)="clearForm(updateForm)">
+                        Clear Form
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" (click)="goBack()">
+                        <- Back
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container mt-4">
+    <div class="card-shadow">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Add Department</h4>
+        </div>
+        <div class="card-body">
+            <form #depform="ngForm">
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label required">Department Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter Name"
+                            [(ngModel)]="department.name">
+                        <div *ngIf="errorMessages.name" class="text-danger">
+                            <small *ngFor="let error of errorMessages.name">
+                                {{error}} <br>
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Department Location</label>
+                        <input type="text" name="location" class="form-control" placeholder="Enter Location"
+                            [(ngModel)]="department.location">
+
+                        <div *ngIf="errorMessages.location">
+                            <small *ngFor="let error of errorMessages.location" class="text-danger">
+                                {{error}} <br>
+                            </small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-4 d-flex gap-3">
+
+                    <button type="button" class="btn btn-primary px-4" (click)="addDepartment(depform)">
+                        Add Department
+                    </button>
+
+                    <button type="button" class="btn btn-outline-secondary px-4" (click)="clearForm(depform)">
+                        Clear
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" (click)="goBack()">
+                        <- Back 
+                    </button>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

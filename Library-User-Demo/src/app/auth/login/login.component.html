@@ -1,0 +1,83 @@
+<!-- <div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="card shadow-lg p-4 login-card">
+
+        <h4 class="text-center mb-4">Library Management Login</h4>
+
+        <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" placeholder="Enter Username" [(ngModel)]="user.username"> 
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Enter Password" [(ngModel)]="user.password"> 
+        </div>
+
+        <div class="d-grid mt-4">
+            <button type="button" class="btn btn-primary" (click)="login()">
+                LOGIN
+            </button>
+        </div>
+
+    </div> 
+</div> -->
+
+<div class="login-wrapper">
+
+  <div class="login-left">
+    <div class="brand">
+      <h1>Library<span>MS</span></h1>
+      <p>Secure Digital Library Management</p>
+    </div>
+  </div>
+
+  <div class="login-right">
+
+    <div class="login-box">
+
+      <h3 class="mb-2 fw-bold">Welcome Back</h3>
+      <p class="text-muted mb-4">Sign in to continue</p>
+
+      <div class="form-group mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control form-control-lg" name="username" placeholder="Enter username"
+          [(ngModel)]="user.username" [class.is-invalid]="errorMessages.username">
+
+        <div *ngIf="errorMessages.username" class="text-danger">
+          <span>{{errorMessages.username}}</span>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control form-control-lg" name="password" placeholder="Enter password"
+          [(ngModel)]="user.password" [class.is-invalid]="errorMessages.password">
+
+        <div *ngIf="errorMessages.password" class="text-danger">
+          <span>{{errorMessages.password[0]}}</span>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <input type="checkbox"> Remember me
+        </div>
+        <a class="text-primary small">Forgot password?</a>
+      </div>
+
+      <button class="btn btn-primary btn-lg w-100" (click)="login()">
+        Login
+      </button>
+
+      <div class="text-center mt-4">
+        <small>Don’t have an account?</small>
+        <a class="text-danger fw-semibold ms-1" (click)="router.navigate(['/register'])" style="cursor:pointer">
+          Create Account
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

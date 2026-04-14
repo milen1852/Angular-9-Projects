@@ -1,0 +1,13 @@
+.dashboard-card {
+  cursor: pointer;
+  border-radius: 15px;
+  height: 180px;
+}
+
+.dashboard-card:hover{
+    background-color: aliceblue;
+}
+
+.col-md-6.col-lg-6{
+    margin-top: 50px;
+}

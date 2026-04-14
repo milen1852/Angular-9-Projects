@@ -1,0 +1,118 @@
+<div class="container mt-4">
+
+   <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4 class="mb-0">PRODUCTS</h4>
+
+      <div>
+
+         <button type="button" class="btn btn-primary" [disabled]="selectedProduct" [routerLink]="['/add-product']">
+            Create
+         </button>
+
+         <button type="button" class="btn btn-success" [disabled]="!selectedProduct">
+            View
+         </button>
+
+         <button type="button" class="btn btn-warning" [disabled]="!selectedProduct" (click)="updateProduct()">
+            Edit
+         </button>
+
+         <button type="button" class="btn btn-danger" [disabled]="!selectedProduct">
+            Delete
+         </button>
+      </div>
+   </div>
+
+   <div class="card shadow-sm mb-4">
+      <div class="card-header bg-light fw-semibold">
+         Search & Filters
+      </div>
+
+      <div class="card-body">
+         <div class="row g-3">
+
+            <div class="col-md-4">
+               <input type="number" class="form-control" placeholder="Search ID" [(ngModel)]="prodId">
+            </div>
+
+            <div class="col-md-4">
+               <input type="text" class="form-control" placeholder="Search Name" [(ngModel)]="prodName">
+            </div>
+
+            <div class="col-md-4">
+               <input type="text" class="form-control" placeholder="Search Category" [(ngModel)]="prodCategory">
+            </div>
+
+            <div class="col-md-4">
+               <input type="number" class="form-control" placeholder="Search Min Price" [(ngModel)]="minPrice">
+            </div>
+
+            <div class="col-md-4">
+               <input type="number" class="form-control" placeholder="Search Max Price" [(ngModel)]="maxPrice">
+            </div>
+
+            <div class="col-md-4">
+               <input type="text" class="form-control" ngxDaterangepickerMd [maxDate]="maxDate" [(ngModel)]="orderDateRange"
+                [linkedCalendars]="true" [showClearButton]="true" [showCustomRangeLabel]="true" [ranges]="ranges"
+               [autoApply]="false" [keepCalendarOpeningWithRange]="true" [alwaysShowCalendars]="true" [singleDatePicker]="false"
+               [locale]="{format: 'YYYY-MM-DD' }" placeholder="Search Order Date">
+            </div>
+         </div>
+
+         <div class="mt-3 text-end">
+            <button type="button" class="btn btn-success" (click)="searchProducts()">
+               Search
+            </button>
+
+            <button type="button" class="btn btn-outline-secondary" (click)="resetFilters()">
+               Reset
+            </button>
+         </div>
+      </div>
+   </div>
+
+   <div class="card shadow-sm">
+      <div class="card-body p-0">
+
+         <div class="table-responsive">
+            <table id="productTable" class="table table-hover table-bordered table-striped mb-0">
+               <thead class="table-dark">
+                  <tr>
+                     <th>Product ID</th>
+                     <th>Product Name</th>
+                     <th>Product Category</th>
+                     <th>Price</th>
+                     <th>Qunatity</th>
+                     <th>Order Date</th>
+                  </tr>
+               </thead>
+            </table>
+         </div>
+
+         <div class="d-flex justify-content-between align-items-center p-3">
+
+            <div class="text-muted">
+
+            </div>
+
+            <div>
+               <button type="button" class="btn btn-outline-secondary" [disabled]="page === 0" 
+               (click)="prevPage()">
+                  ⬅ Prev
+               </button>
+
+               <button type="button" class="btn btn-outline-secondary" [disabled]="(page + 1) * size >= totalElements" 
+                  (click)="nextPage()">
+                  Next ➡
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="d-grid mt-4">
+      <button type="button" class="btn btn-secondary" (click)="goBack()">
+         Go to Dashboard
+      </button>
+   </div>
+</div>

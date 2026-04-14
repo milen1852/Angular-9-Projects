@@ -1,0 +1,16 @@
+label.required::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+
+label{
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+button {
+    margin-top: 35px;
+    margin-right: 15px;
+    padding: 10px;
+}

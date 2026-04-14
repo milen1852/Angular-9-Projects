@@ -1,0 +1,8 @@
+#productTable tbody tr.selected-row{
+    background-color: #57b5f8 !important;
+}
+
+#productTable tbody tr:hover {
+    background-color: #cfe6ff;
+    cursor: pointer;
+}

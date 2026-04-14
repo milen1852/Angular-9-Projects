@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <h3 class="text-center mb-5">Dashboard</h3>
+
+    <div class="row g-4">
+
+        <div class="col-md-6 col-lg-3 ">
+            <div class="card dashboard-card shadow-lg text-center p-4">
+                <div class="card-body">
+                    <h4 class="card-title" routerLink="/get-employees">View Employees</h4>
+                    <p class="card-text">Browse, Search & Filter Employees</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card dashboard-card shadow-lg text-center p-4">
+                <div class="card-body">
+                    <h4 class="card-title" routerLink="/add-employee">Add Employee</h4>
+                    <p class="card-text">Create a New Employee Record</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card dashboard-card shadow-lg text-center p-4">
+                <div class="card-body">
+                    <h5 class="card-title" routerLink="/get-departments">View Departments</h5>
+                    <p class="card-text">Search & Filter Departments</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card dashboard-card shadow-lg text-center p-4">
+                <div class="card-body">
+                    <h4 class="card-title" routerLink="/add-department">Add Department</h4>
+                    <p class="card-text">Add a new Department Record</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+        <button class="btn btn-danger" (click)="logout()">
+            Logout
+        </button>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+.button1 button{
+    width: 110px;
+    margin-left: 18px;
+    padding: auto;
+    height: 45px;
+}
+
+.button1 button:disabled {
+    cursor: not-allowed;
+}
+
+.button2 button{
+    margin-top: 18px;
+    margin-right: 18px;
+    width: 100px;
+    height: 40px;
+    padding: auto;
+}
+
+.form-control {
+    margin-top: 15px;
+}
+
+.button3 button{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+}
+
+/* LEFT SIDE */
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toolbar-text {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+/* SELECT */
+.page-size-select {
+  width: 75px;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  transition: all 0.2s ease;
+}
+
+.page-size-select:focus {
+  border-color: #111827;
+  box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.08);
+}
+
+/* RIGHT SIDE */
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.page-indicator {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+/* NAV BUTTONS */
+.btn-nav {
+  padding: 6px 16px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #1f2937;
+  transition: all 0.2s ease;
+}
+
+.btn-nav:hover:not(:disabled) {
+  background-color: #111827;
+  color: #ffffff;
+  border-color: #111827;
+}
+
+.btn-nav:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+

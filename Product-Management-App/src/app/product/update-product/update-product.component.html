@@ -1,0 +1,89 @@
+<div class="container mt-4">
+  <div class="card shadow">
+    <div class="card-header bg-warning text-dark">
+      <h4 class="mb-0">Update Employee</h4>
+    </div>
+
+    <div class="card-body">
+      <form #form="ngForm" novalidate>
+
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <label class="form-label">Product Id</label>
+
+            <input type="number" class="form-control" name="prodId" [(ngModel)]="product.prodId" disabled>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Product Name</label>
+
+            <input type="text" class="form-control" name="prodName" [(ngModel)]="product.prodName" disabled>
+          </div>
+
+
+          <div class="col-md-6">
+            <label class="form-label">Product Category</label>
+
+            <input type="text" class="form-control" name="prodCategory" [(ngModel)]="product.prodCategory"
+              [class.is-invalid]="errorMessages.prodCategory">
+
+            <div *ngIf="errorMessages.prodCategory" class="text-danger">
+              <!-- <small *ngFor="let err of errorMessages.prodCategory">
+                {{ err }} <br>
+              </small> -->
+
+              {{errorMessages.prodCategory[0]}}
+            </div>
+          </div>
+
+
+          <div class="col-md-6">
+            <label class="form-label">Product Price</label>
+            <input type="number" class="form-control" name="prodPrice" [(ngModel)]="product.prodPrice"
+            [class.is-invalid]="errorMessages.prodPrice">
+
+            <div *ngIf="errorMessages.prodPrice" class="text-danger">
+              <small *ngFor="let err of errorMessages.prodPrice">
+                {{ err }} <br>
+              </small>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Product Quantity</label>
+            <input type="text" class="form-control" name="prodQuantity" [(ngModel)]="product.prodQuantity"
+              [class.is-invalid]="errorMessages.prodQuantity">
+
+            <div *ngIf="errorMessages.prodQuantity" class="text-danger">
+              <small *ngFor="let err of errorMessages.prodQuantity">
+                {{ err }} <br>
+              </small>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Order Date</label>
+            <input class="form-control" type="date" name="orderDate" [(ngModel)]="product.orderDate">
+          </div>
+
+        </div>
+
+        <div class="d-grid mt-4">
+          <button class="btn btn-warning px-4" (click)="updateProduct(form)">
+            Update Product
+          </button>
+
+          <button class="btn btn-outline-secondary px-4" (click)="clearForm(form)">
+            Clear
+          </button>
+
+          <button class="btn btn-secondary" (click)="goBack()">
+            Back
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

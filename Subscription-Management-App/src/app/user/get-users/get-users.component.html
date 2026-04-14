@@ -1,0 +1,144 @@
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0">USERS RECORD</h4>
+
+        <div class="button1">
+            <button class="btn btn-primary me-2" [disabled]="selectedUser" [routerLink]="['/add-user']">
+                Create
+            </button>
+
+            <button class="btn btn-success me-2" [disabled]="!selectedUser" (click)="viewUser()">
+                View
+            </button>
+
+            <button class="btn btn-warning me-2" [disabled]="!selectedUser" (click)="updateUser()">
+                Update
+            </button>
+
+            <button class="btn btn-danger me-2" [disabled]="!selectedUser || !selectedUser.isActive"
+                (click)="deleteUser()">
+                Deactivate
+            </button>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-light fw-semibold">
+            Search & Filters
+        </div>
+
+        <div class="card-body">
+            <div class="row g-3">
+
+                <div class="col-md-4">
+                    <input type="number" class="form-control" placeholder="Search User ID" [(ngModel)]="userId">
+                </div>
+
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Search First Name" [(ngModel)]="firstName">
+                </div>
+
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Search Last Name" [(ngModel)]="lastName">
+                </div>
+
+                <div class="col-md-4">
+                    <input type="email" class="form-control" placeholder="Search Email" [(ngModel)]="email">
+                </div>
+
+                <div class="col-md-4">
+                    <input type="date" class="form-control" placeholder="Search Subscription Date"
+                        [(ngModel)]="subStartDate">
+                </div>
+
+                <div class="col-md-4">
+                    <select name="status" class="form-control" [(ngModel)]="status">
+                        <option value="">All Status</option>
+                        <option value="ACTIVE">ACTIVE</option>
+                        <option value="INACTIVE">INACTIVE</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button2">
+                <button class="btn btn-success" (click)="searchUsers()">
+                    Search
+                </button>
+
+                <button class="btn btn-outline-secondary" (click)="resetFilters()">
+                    Reset
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+
+            <div class="table-responsive">
+                <table id="usersTable" class="table table-hover table-bordered table-striped mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>User ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Plan Type</th>
+                            <th>Plan Price</th>
+                            <th>Plan Id</th>
+                            <th>Subscription Status</th>
+                            <th>Subscription Start Date</th>
+                            <th>Subscription End Date</th>
+                            <th>Active User</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="table-toolbar">
+
+                <!-- LEFT SECTION -->
+                <div class="toolbar-left">
+                    <span class="toolbar-text">Show</span>
+
+                    <select class="form-select page-size-select" [(ngModel)]="size" (change)="onSizeChange()">
+
+                        <option [ngValue]="5">5</option>
+                        <option [ngValue]="10">10</option>
+                        <option [ngValue]="15">15</option>
+                    </select>
+
+                    <span class="toolbar-text">Entries</span>
+                </div>
+
+                <!-- RIGHT SECTION -->
+                <div class="toolbar-right">
+
+                    <button class="btn-nav" [disabled]="page === 0" (click)="prevPage()">
+                        Previous
+                    </button>
+
+                    <span class="page-indicator">
+                        Page {{ page + 1 }}
+                    </span>
+
+                    <button class="btn-nav" [disabled]="(page + 1) * size >= totalElements" (click)="nextPage()">
+                        Next
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="d-grid mt-4">
+        <button type="button" class="btn btn-secondary" (click)="goBack()">
+            Go to Dashboard
+        </button>
+    </div>
+</div>

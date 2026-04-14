@@ -1,0 +1,88 @@
+<div class="container mt-4">
+  <div class="card shadow border-danger">
+    <div class="card-header bg-danger text-white">
+      <h4 class="mb-0">Delete Employee</h4>
+    </div>
+
+    <div class="card-body">
+
+      <div class="row g-3">
+
+        <div class="col-md-6">
+          <label class="form-label">Employee ID</label>
+          <input class="form-control"
+                 [value]="employee.key.empId"
+                 disabled>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">First Name</label>
+          <input class="form-control"
+                 [value]="employee.firstName"
+                 disabled>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Last Name</label>
+          <input class="form-control"
+                 [value]="employee.lastName"
+                 disabled>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input class="form-control"
+                 [value]="employee.key.email"
+                 disabled>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Department ID</label>
+          <input class="form-control"
+                 [value]="employee.deptId"
+                 disabled>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Status</label>
+          <input class="form-control"
+                 [value]="employee.status"
+                 disabled>
+        </div>
+
+      </div>
+
+      <hr class="my-4">
+
+      <div>
+        <label class="form-label d-block">
+          Are you sure you want to deactivate this employee?
+        </label>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input"
+                 type="radio"
+                 name="confirm"
+                 value="YES"
+                 [(ngModel)]="confirmDelete">
+          <label class="form-check-label">Yes! Deactivate</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input"
+                 type="radio"
+                 name="confirm"
+                 value="NO"
+                 [(ngModel)]="confirmDelete">
+          <label class="form-check-label">No, cancel</label>
+        </div>
+      </div>
+
+      <button class="btn btn-danger mt-3 px-4"
+              (click)="deleteEmployee()">
+        Confirm
+      </button>
+
+    </div>
+  </div>
+</div>

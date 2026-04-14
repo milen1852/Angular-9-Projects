@@ -1,0 +1,14 @@
+.login-card {
+    height: 350px;
+    width: 400px;
+    padding: 25px;
+    border-radius: 35px;
+}
+
+input {
+    border-radius: 10px;
+}
+
+button {
+    width: 350px;
+}

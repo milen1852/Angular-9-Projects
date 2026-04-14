@@ -1,0 +1,84 @@
+<div class="login-wrapper">
+
+  <!-- LEFT BRAND PANEL -->
+  <div class="login-left">
+    <div class="brand">
+      <h1>Subsciption<span>MS</span></h1>
+      <p>Enterprise User Subscription Management System</p>
+
+      <div class="brand-footer">
+        <small>© 2026 SubscriptionMS. All rights reserved.</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT LOGIN PANEL -->
+  <div class="login-right">
+    <div class="login-box">
+
+      <h4 class="fw-semibold mb-1">Sign in</h4>
+      <p class="text-muted mb-4">Use your organizational credentials</p>
+
+      <!-- Username -->
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="john.doe"
+          [(ngModel)]="user.username"
+          [class.is-invalid]="errorMessages.username">
+
+        <div *ngIf="errorMessages.username" class="invalid-feedback">
+          {{ errorMessages.username }}
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-4">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="••••••••"
+          [(ngModel)]="user.password"
+          [class.is-invalid]="errorMessages.password">
+
+        <div *ngIf="errorMessages.password" class="invalid-feedback">
+          {{ errorMessages.password[0] }}
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">
+            Remember me
+          </label>
+        </div>
+
+        <a class="link-secondary small" style="cursor:pointer">
+          Forgot password?
+        </a>
+      </div>
+
+      <!-- Login Button -->
+      <button class="btn btn-dark w-100 py-2" (click)="login()">
+        Sign In
+      </button>
+
+      <!-- Footer -->
+      <div class="text-center mt-4">
+        <small class="text-muted">Need access?</small>
+        <a class="fw-medium ms-1 text-decoration-none"
+           (click)="router.navigate(['/register'])"
+           style="cursor:pointer">
+          Register account
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>

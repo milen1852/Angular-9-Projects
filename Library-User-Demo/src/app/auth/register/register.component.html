@@ -1,0 +1,93 @@
+<div class="register-wrapper">
+
+    <div class="register-card">
+
+        <h3 class="title">Register User</h3>
+        <p class="subtitle">Fill in the details below to add a new user</p>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>User ID</label>
+                <input type="text" class="form-control" name="userId" placeholder="Enter User ID"
+                    [(ngModel)]="user.userId" [class.is-invalid]="errorMessages.userId">
+                
+                <div *ngIf="errorMessages.userId" class="text-danger">
+                    <span>{{errorMessages.userId[0]}}</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" name="firstName" placeholder="Enter FirstName"
+                    [(ngModel)]="user.firstName" [class.is-invalid]="errorMessages.firstName">
+
+                <div *ngIf="errorMessages.firstName" class="text-danger">
+                    <span>{{errorMessages.firstName[0]}}</span>
+                </div>    
+            </div>
+
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" name="lastName" placeholder="Enter LastName"
+                    [(ngModel)]="user.lastName" [class.is-invalid]="errorMessages.lastName">
+                
+                <div *ngIf="errorMessages.lastName" class="text-danger">
+                    <span>{{errorMessages.lastName[0]}}</span>
+                </div>    
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter Email"
+                    [(ngModel)]="user.email" [class.is-invalid]="errorMessages.email">
+
+                <div *ngIf="errorMessages.email" class="text-danger">
+                    <span>{{errorMessages.email[0]}}</span>
+                </div>    
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter Password"
+                    [(ngModel)]="user.password" [class.is-invalid]="errorMessages.password">
+                
+                <div *ngIf="errorMessages.password" class="text-danger">
+                    <span>{{errorMessages.password[0]}}</span>
+                </div>    
+            </div>
+
+            <div class="form-group">
+                <label>Status</label>
+                <select class="form-control" name="status" [(ngModel)]="user.status" [class.is-invalid]="errorMessages.status">
+                    <option value="" disabled hidden>Select status</option>
+                    <option *ngFor="let s of statuses" [value]="s">
+                        {{ s }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Created By</label>
+                <select class="form-control" name="createdBy" [(ngModel)]="user.createdBy" [class.is-invalid]="errorMessages.createdBy">
+                    <option value="" disabled hidden>Select creator</option>
+                    <option *ngFor="let c of createdByList" [value]="c">
+                        {{ c }}
+                    </option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-success" (click)="registerUser()">
+                Register User
+            </button>
+            <button class="btn btn-outline-secondary" (click)="router.navigate(['/login'])">
+                Back to Login
+            </button>
+        </div>
+
+    </div>
+
+</div>

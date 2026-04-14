@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+#usersTable tbody tr.selected-row{
+    background-color: #57b5f8 !important;
+}
+
+#usersTable tbody tr:hover {
+    background-color: #cfe6ff;
+    cursor: pointer;
+}

@@ -1,0 +1,95 @@
+<div class="container mt-5">
+    <div class="card shadow-lg rounded-3">
+        <div class="card-header bg-dark text-white py-3 px-4">
+            <h4 class="mb-0 fw-semibold">User Details</h4>
+        </div>
+
+        <div class="card-body px-4 py-4" *ngIf="user">
+            <table class="table table-bordered align-middle mb-0 user-details-table">
+                <tbody>
+
+                    <tr>
+                        <th>User ID</th>
+                        <td>{{user.userId}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>First Name</th>
+                        <td>{{user.firstName}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Last Name</th>
+                        <td>{{user.lastName}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Email</th>
+                        <td>{{user.email}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Phone Number</th>
+                        <td>{{user.phoneNumber}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Plan Type</th>
+                        <td>{{user.planType}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Price</th>
+                        <td>{{user.price}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Plan Id</th>
+                        <td>{{user.planId}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Subscription Status</th>
+                        <td>
+                            <span class="badge bg-success px-3 py-2" *ngIf="user.subscriptionStatus === 'ACTIVE'">
+                                ACTIVE
+                            </span>
+
+                            <span class="badge bg-warning text-dark px-3 py-2" *ngIf="user.subscriptionStatus === 'INACTIVE'">
+                                INACTIVE
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>Subscription Start Date</th>
+                        <td>{{user.subscriptionStartDate}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Subscription End Date</th>
+                        <td>{{user.subscriptionEndDate}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Active User</th>
+                        <td>
+                            <span class="badge bg-primary px-3 py-2" *ngIf="user.isActive">
+                                TRUE
+                            </span>
+                            <span class="badge bg-danger px-3 py-2" *ngIf="!user.isActive">
+                                FALSE
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <DIV class="d-flex justify-content-end mt-4">
+                <button class="btn btn-secondary px-4" (click)="router.navigate(['/get-users'])">
+                    <-BACK
+                </button>
+            </DIV>
+        </div>
+    </div>
+</div>
